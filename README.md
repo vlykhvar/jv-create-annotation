@@ -1,6 +1,6 @@
 # jv-create-annotation
  
-Посмотреть [видео](https://mate-academy.github.io/jv-program/lesson_11.html) и создать АНАЛОГИЧНЫЙ проект. 
+Посмотреть [видео](https://mate-academy.github.io/jv-program-fulltime/lesson_13.html) и создать АНАЛОГИЧНЫЙ проект. 
 
 Добавить ещё одну модель и DAO слой для неё. Сделать так чтобы поля этой модели ТОЖЕ 
 внедрялись инжектором.
