@@ -1,6 +1,9 @@
 # jv-create-annotation
  
-Посмотреть все [видео](https://mate-academy.github.io/jv-program-fulltime/01_core/homework/lesson_19.html) и создать АНАЛОГИЧНЫЙ проект. Затем: 
+Посмотреть все видео 
+([часть 1](https://mate-academy.github.io/jv-program-fulltime/01_core/homework/lesson_22.html), 
+[часть 2](https://mate-academy.github.io/jv-program-fulltime/01_core/homework/lesson_23.html)) 
+и создать АНАЛОГИЧНЫЙ проект. Затем: 
 
 - Добавить ещё одну модель и DAO слой для неё. 
 - Сделать так, чтобы DAO имплементацию этой модели ТАКЖЕ можно было внедрить инжектором в поле любого класса (например, в поле ConsoleHandler).
