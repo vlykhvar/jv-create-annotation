@@ -5,24 +5,16 @@ public class Bet {
     private double risk;
 
     public Bet(int value, double risk) {
-        this.value = value;
-        this.risk = risk;
+        this.value = check(value);
+        this.risk = check(risk);
     }
 
     public int getValue() {
         return value;
     }
 
-    public void setValue(int value) {
-        this.value = value;
-    }
-
     public double getRisk() {
         return risk;
-    }
-
-    public void setRisk(double risk) {
-        this.risk = risk;
     }
 
     @Override
@@ -31,5 +23,19 @@ public class Bet {
                 + "value=" + value
                 + ", risk=" + risk
                 + '}';
+    }
+
+    private int check(int value) {
+        if (value < 0) {
+            throw new NullPointerException();
+        }
+        return value;
+    }
+
+    private double check(double risk) {
+        if (risk < 0) {
+            throw new NullPointerException();
+        }
+        return risk;
     }
 }
