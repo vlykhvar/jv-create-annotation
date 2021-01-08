@@ -22,13 +22,12 @@ public class ConsoleHandler {
                 int value = Integer.parseInt(betData[0]);
                 double risk = Double.parseDouble(betData[1]);
                 if (value <= 0 || risk <= 0) {
-                    throw new RuntimeException();
+                    System.out.println("Value and risk can not be zero or less");
+                    continue;
                 }
                 bet = new Bet(value, risk);
-            } catch (NumberFormatException e) {
+            } catch (NumberFormatException | IndexOutOfBoundsException e) {
                 System.out.println("Please, enter correct data");
-            } catch (RuntimeException e) {
-                System.out.println("Value and risk can not be zero or less");
             }
             if (bet != null) {
                 betDao.add(bet);
