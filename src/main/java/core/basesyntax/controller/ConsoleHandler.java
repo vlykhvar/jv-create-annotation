@@ -1,19 +1,25 @@
 package core.basesyntax.controller;
 
 import core.basesyntax.dao.BetDao;
-import core.basesyntax.dao.BetDaoImpl;
+import core.basesyntax.dao.UserDao;
+import core.basesyntax.library.Inject;
 import core.basesyntax.model.Bet;
 import java.util.Scanner;
 
 public class ConsoleHandler {
-    private BetDao betDao = new BetDaoImpl();
+
+    @Inject
+    private BetDao betDao;
+
+    @Inject
+    private UserDao userDao;
 
     public void handle() {
         Scanner scanner = new Scanner(System.in);
-
         while (true) {
             String command = scanner.nextLine();
             if (command.equalsIgnoreCase("q")) {
+                betDao.getAll().forEach(System.out::println);
                 return;
             }
             Bet bet = null;
@@ -35,4 +41,5 @@ public class ConsoleHandler {
             }
         }
     }
+
 }
