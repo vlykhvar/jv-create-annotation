@@ -20,14 +20,12 @@ public class Injector {
                     if (Factory.getBetDao().getClass().isAnnotationPresent(Dao.class)) {
                         field.set(instance, Factory.getBetDao());
                     } else {
-                        throw new RuntimeException();
-                    }
-                } else {
-                    if (field.getType().equals(UserDao.class)) {
-                        if (Factory.getUserDao().getClass().isAnnotationPresent(Dao.class)) {
-                            field.set(instance, Factory.getUserDao());
-                        } else {
-                            throw new RuntimeException();
+                        if (field.getType().equals(UserDao.class)) {
+                            if (Factory.getUserDao().getClass().isAnnotationPresent(Dao.class)) {
+                                field.set(instance, Factory.getUserDao());
+                            } else {
+                                throw new RuntimeException();
+                            }
                         }
                     }
                 }
