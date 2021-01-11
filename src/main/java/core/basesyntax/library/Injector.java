@@ -15,13 +15,12 @@ public class Injector {
         Field[] declaredField = clazz.getDeclaredFields();
         for (Field field : declaredField) {
             if (field.getAnnotation(Inject.class) != null) {
-                field.setAccessible(true);
-                if (field.getType().equals(BetDao.class)) {
-                    if (Factory.getBetDao().getClass().isAnnotationPresent(Dao.class)) {
+                if ((field.getType().equals(BetDao.class)) && Factory.getBetDao().getClass().isAnnotationPresent(Dao.class)) {
+                        field.setAccessible(true);
                         field.set(instance, Factory.getBetDao());
                     } else {
-                        if (field.getType().equals(UserDao.class)) {
-                            if (Factory.getUserDao().getClass().isAnnotationPresent(Dao.class)) {
+                        if ((field.getType().equals(UserDao.class)) && (Factory.getUserDao().getClass().isAnnotationPresent(Dao.class))) {
+                                field.setAccessible(true);
                                 field.set(instance, Factory.getUserDao());
                             } else {
                                 throw new RuntimeException();
@@ -29,8 +28,6 @@ public class Injector {
                         }
                     }
                 }
-            }
-        }
         return instance;
     }
 }
